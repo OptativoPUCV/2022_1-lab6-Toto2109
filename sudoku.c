@@ -66,14 +66,14 @@ int is_valid(Node* n){
     }
   }
 
-  int *cuadrante = (int*)calloc(10,sizeof(int));
-  for (int i = 0; i < 9; i++){ 
+  for (int i = 0; i < 9; i++){
+    int cuadrante[10] = {0};
     for(int j = 0; j < 9; j++){
       int x=3*(i/3) + (j/3);
       int y=3*(i%3) + (j%3);
-      if (n->sudo[x][y] != 0){
-        cuadrante[n->sudo[x][y]]++;
-        if (cuadrante[n->sudo[x][y]] > 1) return 0;
+      if (cuadrante[n->sudo[x][y]] != 0) return 0;
+      if(!cuadrante[n->sudo[x][y]] && n->sudo[i][j]){
+        cuadrante[n->sudo[i][j]] = 1;
       }
     }
   }
