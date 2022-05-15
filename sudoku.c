@@ -51,13 +51,17 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
-    int i,j;
-    for(i = 0; i < 9; i++){
-      for(j = 0; j < 9 ; j++){
+    for(int i = 0; i < 9; i++){
+      for(int j = 0; j < 9 ; j++){
         if(n -> sudo[i][j] == 0);
-        Node *new = (Node*) malloc(sizeof(Node));
-        new -> sudo = n -> sudo;
-
+        for(int k = 0; k < 10; k++ ){
+          n -> sudo [i][j] = k;
+          if(is_valid(n)){
+            Node *new = copy(n);
+            pushBack(list,new);
+          }
+        }
+        return list;
       }
     }
     return list;

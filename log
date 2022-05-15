@@ -26,3 +26,9 @@ sudoku.c:59:21: error: assignment to expression with array type
                      ^
 Compilation failed
 4f6e684
+Sun May 15 17:34:58 HSP 2022: 
+ sudoku.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+ tests:  0|5
+total_score: 0/70
+bce8c9b
