@@ -52,11 +52,11 @@ int is_valid(Node* n){
     }
   }
 
-  int *columnas = (int*) calloc(9,sizeof(int));
+  int *columnas = (int*) calloc(10,sizeof(int));
   for(int i = 0; i < 9 ;i++){
     for(int j = 0; j < 9;j++){
-      columnas[(n -> sudo[j][i])-1]++;
-      if(columnas[(n -> sudo[j][i])-1] > 1) return 0;
+      columnas[n -> sudo[j][i]]++;
+      if(columnas[n -> sudo[j][i]] > 1) return 0;
     }
   }
 
