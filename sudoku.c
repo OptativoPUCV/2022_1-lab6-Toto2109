@@ -58,7 +58,7 @@ List* get_adj_nodes(Node* n){
           n -> sudo [i][j] = k;
           if(is_valid(n)){
             Node *new = copy(n);
-            pushBack(list,new);
+            push(list,new);
           }
         }
         return list;
