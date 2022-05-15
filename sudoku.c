@@ -44,22 +44,22 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int *filas = (int*) calloc(10,sizeof(int));
-  for(int i = 0; i < 9 ;i++){
-    for(int j = 0; j < 9;j++){
-      if(n -> sudo[i][j] != 0){
-        filas[n -> sudo[i][j]]++;
-        if(filas[n -> sudo[i][j]] > 1) return 0;
+  int *filas = (int*)calloc(10, sizeof(int));
+  for(int i = 0; i < 9;i++){
+    for (int j = 0; j < 9;j++){
+      if (n->sudo[i][j] != 0){
+        filas[n->sudo[i][j]]++;
+        if (filas[n->sudo[i][j]] > 1) return 0;
       }
     }
   }
 
-  int *columnas = (int*) calloc(10,sizeof(int));
-  for(int i = 0; i < 9 ;i++){
-    for(int j = 0; j < 9;j++){
-      if(n -> sudo[i][j] != 0){
-        columnas[n -> sudo[i][j]]++;
-        if(columnas[n -> sudo[i][j]] > 1) return 0;
+  int *columnas = (int*)calloc(10, sizeof(int));
+  for(int i = 0; i < 9;i++){
+    for (int j = 0; j < 9;j++){
+      if (n->sudo[j][i] != 0){
+        columnas[n->sudo[j][i]]++;
+        if (columnas[n->sudo[j][i]] > 1) return 0;
       }
     }
   }
