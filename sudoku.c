@@ -66,8 +66,8 @@ int is_valid(Node* n){
       int x = 3*(i/3) + (j/3);
       int y = 3*(i/3) + (j/3);
       if (n->sudo[x][y] != 0){
-        cuadrante[(n -> sudo[x][j])-1]++;
-        if (cuadrante[(n -> sudo[x][j])-1] > 1 ) return 0;
+        cuadrante[(n -> sudo[x][y])-1]++;
+        if (cuadrante[(n -> sudo[x][y])-1] > 1 ) return 0;
       }
     }
 
