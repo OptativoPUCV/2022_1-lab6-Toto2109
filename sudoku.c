@@ -57,19 +57,21 @@ int is_valid(Node* n){
   int *columnas = (int*) calloc(10,sizeof(int));
   for(int i = 0; i < 9 ;i++){
     for(int j = 0; j < 9;j++){
-      columnas[n -> sudo[j][i]]++;
-      if(columnas[n -> sudo[j][i]] > 1) return 0;
+      if(n -> sudo[i][j] != 0){
+        columnas[n -> sudo[i][j]]++;
+        if(columnas[n -> sudo[i][j]] > 1) return 0;
+      }
     }
   }
 
-  int *cuadrante = (int*)calloc(9,sizeof(int));
+  int *cuadrante = (int*)calloc(10,sizeof(int));
   for(int i = 0; i < 9; i++){
     for(int j = 0; j < 9; j++){
       int x = 3*(i/3) + (j/3);
       int y = 3*(i/3) + (j/3);
       if (n->sudo[x][y] != 0){
-        cuadrante[(n -> sudo[x][y])-1]++;
-        if (cuadrante[(n -> sudo[x][y])-1] > 1 ) return 0;
+        cuadrante[n -> sudo[x][y]]++;
+        if (cuadrante[n -> sudo[x][y]] > 1 ) return 0;
       }
     }
 
