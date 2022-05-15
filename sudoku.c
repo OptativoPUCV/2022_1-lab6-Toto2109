@@ -60,7 +60,7 @@ int is_valid(Node* n){
     int *columnas = (int*)calloc(10, sizeof(int));
     for (int j = 0; j < 9;j++){
       if (n->sudo[j][i] != 0){
-        columnas[n->sudo[j][i]]++;
+        columnas[n->sudo[i][j]]++;
         if (columnas[n->sudo[j][i]] > 1) return 0;
       }
     }
