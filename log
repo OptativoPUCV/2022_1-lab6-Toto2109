@@ -16,3 +16,13 @@ sudoku.c:55:11: error: unused variable 'data' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 362de0c
+Sun May 15 17:23:38 HSP 2022: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:59:21: error: assignment to expression with array type
+         new -> sudo = n -> sudo;
+                     ^
+Compilation failed
+4f6e684
