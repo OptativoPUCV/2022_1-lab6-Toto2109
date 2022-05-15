@@ -48,9 +48,9 @@ int is_valid(Node* n){
   for(int i = 0; i < 9;i++){
     int fila[10] = {0};
     for (int j = 0; j < 9;j++){
-      if (n->sudo[i][j] != 0){
-        fila[n->sudo[i][j]]++;
-        if (fila[n->sudo[i][j]] > 1) return 0;
+      if (fila[n->sudo[i][j]]) return 0;
+      if (fila[n->sudo[i][j]] == 0 && n->sudo[i][j] != 0){
+        fila[n->sudo[i][j]] = 1;
       }
     }
   }
@@ -59,9 +59,9 @@ int is_valid(Node* n){
   for(int i = 0; i < 9;i++){
     int col[10] = {0};
     for (int j = 0; j < 9;j++){
-      if (n->sudo[i][j] != 0){
-        col[n->sudo[i][j]]++;
-        if (col[n->sudo[i][j]] > 1) return 0;
+      if (col[n->sudo[j][i]]) return 0;
+      if (col[n->sudo[j][i]] == 0 && n->sudo[j][i] != 0){
+        col[n->sudo[j][i]] = 1;
       }
     }
   }
