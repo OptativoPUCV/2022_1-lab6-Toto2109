@@ -44,8 +44,9 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int *filas = (int*)calloc(10, sizeof(int));
+
   for(int i = 0; i < 9;i++){
+    int *filas = (int*)calloc(10, sizeof(int));
     for (int j = 0; j < 9;j++){
       if (n->sudo[i][j] != 0){
         filas[n->sudo[i][j]]++;
@@ -54,8 +55,9 @@ int is_valid(Node* n){
     }
   }
 
-  int *columnas = (int*)calloc(10, sizeof(int));
+
   for(int i = 0; i < 9;i++){
+    int *columnas = (int*)calloc(10, sizeof(int));
     for (int j = 0; j < 9;j++){
       if (n->sudo[j][i] != 0){
         columnas[n->sudo[j][i]]++;
