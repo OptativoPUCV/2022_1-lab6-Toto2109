@@ -2,3 +2,17 @@ Sun May 15 17:10:21 HSP 2022:
  tests:  0|5
 total_score: 0/70
 a4236f3
+Sun May 15 17:23:11 HSP 2022: 
+ sudoku.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+In file included from test.c:5:0:
+sudoku.c: In function 'get_adj_nodes':
+sudoku.c:60:21: error: assignment to expression with array type
+         new -> sudo = n -> sudo;
+                     ^
+sudoku.c:55:11: error: unused variable 'data' [-Werror=unused-variable]
+     void* data;
+           ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+362de0c
