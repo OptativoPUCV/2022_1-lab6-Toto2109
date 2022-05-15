@@ -71,8 +71,8 @@ int is_valid(Node* n){
     for(int j = 0; j < 9; j++){
       int x=3*(i/3) + (j/3);
       int y=3*(i%3) + (j%3);
-      if (cuadrante[n->sudo[x][y]] != 0) return 0;
-      if(!cuadrante[n->sudo[x][y]] && n->sudo[i][j]){
+      if (cuadrante[n->sudo[x][y]]) return 0;
+      if(n->sudo[i][j]){
         cuadrante[n->sudo[i][j]] = 1;
       }
     }
