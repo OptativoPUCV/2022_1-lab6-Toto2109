@@ -47,8 +47,10 @@ int is_valid(Node* n){
   int *filas = (int*) calloc(10,sizeof(int));
   for(int i = 0; i < 9 ;i++){
     for(int j = 0; j < 9;j++){
-      filas[n -> sudo[i][j]]++;
-      if(filas[n -> sudo[i][j]] > 1) return 0;
+      if(n -> sudo[i][j] != 0){
+        filas[n -> sudo[i][j]]++;
+        if(filas[n -> sudo[i][j]] > 1) return 0;
+      }
     }
   }
 
